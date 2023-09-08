@@ -28,18 +28,18 @@ class TimeLeft extends StatelessWidget {
         return Row(
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
-            Flexible(
-              child: Text(
-                "${cubit.seconds} ث ",
-                textDirection: TextDirection.rtl,
-                textAlign: TextAlign.right,
-                style: const TextStyle(
-                  fontSize: 14,
-                  color: Colors.black,
-                  fontWeight: FontWeight.w600,
-                ),
-              ),
-            ),
+            // Flexible(
+            //   child: Text(
+            //     "${cubit.seconds} ث ",
+            //     textDirection: TextDirection.rtl,
+            //     textAlign: TextAlign.right,
+            //     style: const TextStyle(
+            //       fontSize: 14,
+            //       color: Colors.black,
+            //       fontWeight: FontWeight.w600,
+            //     ),
+            //   ),
+            // ),
             Flexible(
               child: Text(
                 "${cubit.minutes} دقيقة ",

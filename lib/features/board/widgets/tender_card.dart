@@ -138,8 +138,6 @@ class _TenderCardState extends State<TenderCard> {
 
                                         await Share.share(
                                           'check out : \n ${widget.inputList[index].tender_title}\n${widget.inputList[index].entity} \n${widget.inputList[index].insurance} ',
- 
-
                                           subject: 'عملية جديدة',
                                         );
                                       },

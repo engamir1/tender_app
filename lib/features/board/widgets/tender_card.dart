@@ -130,14 +130,16 @@ class _TenderCardState extends State<TenderCard> {
                                       ),
                                       onPressed: () async {
 
-                                        String text = '';
-                                        String subject = '';
-                                        String uri = '';
-                                        List<String> imageNames = [];
-                                        List<String> imagePaths = [];
+                                        String tenderTitle = widget
+                                            .inputList[index].tender_title;
+                                        String entity =
+                                            widget.inputList[index].entity;
+                                        String insurance = widget
+                                            .inputList[index].insurance
+                                            .toString();
 
                                         await Share.share(
-                                          'check out : \n ${widget.inputList[index].tender_title}\n${widget.inputList[index].entity} \n${widget.inputList[index].insurance} ',
+                                          'check out :\n عنوان العملية $tenderTitle \n الجهة $entity \n قيمة التأمين  $insurance',
                                           subject: 'عملية جديدة',
                                         );
                                       },

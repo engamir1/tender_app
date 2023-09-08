@@ -17,7 +17,7 @@ class AppText {
   static const String darkMode = " تشغيل الوضع الليلى";
   static const String aboutApp = " من نحن";
 
-  static const String tenders = "tenders";
+  static const String tender_app_test = "tender_app_test";
   static const String allTenders = "all_tenders";
   static const String favTenders = "favTenders";
 
@@ -25,4 +25,6 @@ class AppText {
       " هدف هذا التطبيق هو جمع جميع العمليات الحكومية المعلنة  على الانترنت والجرائد فى مكان واحد واتاحتها للجمور مجانا ومتابعة اخر التحديثات والبحث بسهولة عن اى عملية معلنة  وتصنيف العمليات حسب النشاط والاطلاع فقط على مجال عملك وتخصصك ";
 
   static const String favorite = "المفضلة";
+  static const String madeBy = "made with ❤️ by Mohamed Amir";
+
 }

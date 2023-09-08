@@ -1,6 +1,7 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:share_plus/share_plus.dart';
 
 import 'package:tender_app_test/features/board/widgets/title_label.dart';
 
@@ -45,7 +46,7 @@ class _TenderCardState extends State<TenderCard> {
       child: Scaffold(
         body: Column(
           children: [
-            // data for tenders available
+            // data for tender_app_test available
             Text(
               " ${widget.inputList.length} - ${widget.cardText}",
               textAlign: TextAlign.right,
@@ -128,16 +129,19 @@ class _TenderCardState extends State<TenderCard> {
                                         size: 30,
                                       ),
                                       onPressed: () async {
-                                        // final result = await Share.shareWithResult(
-                                        //     'check out my website https://example.com');
 
-                                        // if (result.status ==
-                                        //     ShareResultStatus.success) {
-                                        //   print(
-                                        //       'Thank you for sharing my website!');
-                                        // }
-                                        // Share.share("new tender ",
-                                        //     subject: 'Look what I made!');
+                                        String text = '';
+                                        String subject = '';
+                                        String uri = '';
+                                        List<String> imageNames = [];
+                                        List<String> imagePaths = [];
+
+                                        await Share.share(
+                                          'check out : \n ${widget.inputList[index].tender_title}\n${widget.inputList[index].entity} \n${widget.inputList[index].insurance} ',
+ 
+
+                                          subject: 'عملية جديدة',
+                                        );
                                       },
                                     ),
                                     // favorite button

@@ -5,6 +5,8 @@ import 'package:tender_app_test/features/board/view/about_page.dart';
 import 'package:tender_app_test/features/board/view/all_tender.dart';
 import 'package:tender_app_test/features/board/view/grouped_tenders.dart';
 import 'package:tender_app_test/features/board/view/search_view.dart';
+import 'package:tender_app_test/features/board/view/settings_page.dart';
+import 'package:tender_app_test/features/splash/views/splash_view.dart';
 // import 'features/board/view/detail_page.dart';
 import 'features/board/view/favorite_page.dart';
 import 'features/board/view/main_board_view.dart';
@@ -22,6 +24,10 @@ class RouteGenerator {
   static const String groupedTenders = "/groupedTenders";
   static const String aboutApp = "/aboutApp";
   static const String favoriteView = "/favoriteView";
+  static const String splashView = "/splashView";
+  static const String settingsView = "/settingsView";
+
+
 
   RouteGenerator._();
 
@@ -62,6 +68,14 @@ class RouteGenerator {
       case aboutApp:
         return MaterialPageRoute(builder: (_) {
           return const AboutAppView();
+        });
+      case splashView:
+        return MaterialPageRoute(builder: (_) {
+          return const SplashView();
+        });
+      case settingsView:
+        return MaterialPageRoute(builder: (_) {
+          return const SettingsView();
         });
 
       default:

@@ -36,16 +36,16 @@ class _FavoriteViewState extends State<FavoriteView> {
 
     return BlocConsumer<TenderCubit, TenderState>(
       builder: (context, state) {
-        List<FavTenderModel> tenders = cubit.favFromHive;
+        List<FavTenderModel> tender_app_test = cubit.favFromHive;
 
-        return tenders.isNotEmpty
+        return false
             ? Scaffold(
                 appBar: myAppBAr,
                 body: Column(
                   children: [
-                    // data for tenders available
+                    // data for tender_app_test available
                     Text(
-                      " ${tenders.length} - نتيجة المفضلة",
+                      " ${tender_app_test.length} - نتيجة المفضلة",
                       textAlign: TextAlign.right,
                       style: AppTextStyle.titleStyle,
                     ),
@@ -54,7 +54,7 @@ class _FavoriteViewState extends State<FavoriteView> {
                       child: ListView.builder(
                           controller: _scrollController,
                           physics: const BouncingScrollPhysics(),
-                          itemCount: tenders.length,
+                          itemCount: tender_app_test.length,
                           itemBuilder: (context, index) {
                             return Padding(
                               padding: const EdgeInsets.only(
@@ -64,7 +64,8 @@ class _FavoriteViewState extends State<FavoriteView> {
                                   cubit.clickedIndex = index;
                                   Navigator.push(context,
                                       MaterialPageRoute(builder: (context) {
-                                    return DetailsPage(inputList: tenders);
+                                    return DetailsPage(
+                                        inputList: tender_app_test);
                                   }));
 
                                   // =============================
@@ -85,21 +86,23 @@ class _FavoriteViewState extends State<FavoriteView> {
                                           mainAxisAlignment:
                                               MainAxisAlignment.spaceBetween,
                                           children: [
-                                            // LabelTitle(tender: tenders[index]),
+                                            // LabelTitle(tender: tender_app_test[index]),
                                             Text(
-                                              " ${tenders[index].announcement_date} :تاريخ النشر ",
+                                              " ${tender_app_test[index].announcement_date} :تاريخ النشر ",
                                               style: AppTextStyle.lightTitle,
                                             ),
                                           ],
                                         ),
                                         const SizedBox(height: 10),
                                         // title of tender
-                                        Text(" ${tenders[index].tender_title}",
+                                        Text(
+                                            " ${tender_app_test[index].tender_title}",
                                             textAlign: TextAlign.right,
                                             style: AppTextStyle.boldBlackTitle),
                                         const SizedBox(height: 5),
                                         // title of organization
-                                        Text(" ${tenders[index].entity}",
+                                        Text(
+                                            " ${tender_app_test[index].entity}",
                                             textAlign: TextAlign.right,
                                             textDirection: TextDirection.rtl,
                                             style: AppTextStyle.bigLightTitle),
@@ -112,7 +115,7 @@ class _FavoriteViewState extends State<FavoriteView> {
                                             indent: 0),
                                         const SizedBox(height: 5),
                                         // time left
-                                        // TimeLeft(tender: tenders[index]),
+                                        // TimeLeft(tender: tender_app_test[index]),
                                         const Divider(
                                             thickness: 1,
                                             endIndent: 0,
@@ -138,7 +141,7 @@ class _FavoriteViewState extends State<FavoriteView> {
                                               cubit: cubit,
                                               index: index,
                                               icon: Icon(
-                                                !tenders[index].isFav
+                                                !tender_app_test[index].isFav
                                                     ? Icons.favorite_border
                                                     : Icons.favorite,
                                                 color: AppColorPallete.redColor,
@@ -148,7 +151,7 @@ class _FavoriteViewState extends State<FavoriteView> {
                                                 // await cubit
                                                 //     .fetchAllFavTenderFromHive();
                                                 // await cubit.changeFavoriteState(
-                                                //     tenders[index]);
+                                                //     tender_app_test[index]);
 
                                                 await cubit
                                                     .removeFavTenderFromHive(
@@ -159,7 +162,7 @@ class _FavoriteViewState extends State<FavoriteView> {
                                             DataSection(
                                               title: "قيمة التأمين",
                                               value:
-                                                  " ${tenders[index].insurance} جنيه " ??
+                                                  " ${tender_app_test[index].insurance} جنيه " ??
                                                       "لا يوجد",
                                               style: AppTextStyle
                                                   .bigGreenLabelText,

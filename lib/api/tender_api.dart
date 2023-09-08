@@ -43,13 +43,13 @@ class RequestTender implements HTTPRequest<TenderModel> {
     List data = jsonDecode(utf8Text);
     // solution
     // 1- make empty list
-    List<TenderModel> tenders = [];
+    List<TenderModel> tender_app_test = [];
     //  2- loop throgh list
     for (var tender in data) {
-      tenders.add(TenderModel.fromjson(tender));
+      tender_app_test.add(TenderModel.fromjson(tender));
     }
 
-    return tenders;
+    return tender_app_test;
   }
 }
 

@@ -51,3 +51,6 @@ final class SuccesLoaddingFavState extends TenderState {}
 final class OnlineConnectionState extends TenderState {}
 
 final class OfflineState extends TenderState {}
+// --------------- settings status --------------------------
+final class SettigsState extends TenderState {}
+

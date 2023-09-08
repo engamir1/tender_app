@@ -237,7 +237,7 @@ class _TenderAppMainState extends State<TenderAppMain>
                 ),
                 // specific page
                 const SpecificView(),
-                // all tenders
+                // all tender_app_test
                 const AllTendersView(),
               ],
             ),

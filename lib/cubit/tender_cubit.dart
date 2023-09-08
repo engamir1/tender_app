@@ -74,7 +74,7 @@ class TenderCubit extends Cubit<TenderState> {
       emit(LoadingTender());
       try {
         var getList = await request.execute();
-        var box = Hive.box<TenderModel>(AppText.tenders);
+        var box = Hive.box<TenderModel>(AppText.tender_app_test);
         await box.clear();
         await box.addAll(getList);
         // tenderList = getList;
@@ -189,9 +189,9 @@ class TenderCubit extends Cubit<TenderState> {
   clearTendersAndGetLatest() async {
     favHiveTenderList = [];
     hiveTenderList = [];
-    // favFromHive = [];
+    favFromHive = [];
 
-    await Hive.box<TenderModel>(AppText.tenders).clear();
+    await Hive.box<TenderModel>(AppText.tender_app_test).clear();
     // await Hive.box<FavTenderModel>(AppText.favTenders).clear();
 
     await getDataFromApi(AppText.allTenders);
@@ -278,7 +278,6 @@ class TenderCubit extends Cubit<TenderState> {
   removeFavTenderFromHive(int index) async {
     var box = Hive.box<FavTenderModel>(AppText.favTenders);
     final keys = box.keys;
-   
 
     print(index);
     print(box.keys);
@@ -315,7 +314,7 @@ class TenderCubit extends Cubit<TenderState> {
       Navigator.of(context!).pushNamed(RouteGenerator.favoriteView);
       scaffoldKey?.currentState?.closeEndDrawer();
     } else if (index == 4) {
-      Navigator.of(context!).pushNamed(RouteGenerator.groupedTenders);
+      Navigator.of(context!).pushNamed(RouteGenerator.settingsView);
       scaffoldKey?.currentState?.closeEndDrawer();
     } else if (index == 5) {
       Navigator.of(context!).pushNamed(RouteGenerator.aboutApp);
@@ -339,5 +338,14 @@ class TenderCubit extends Cubit<TenderState> {
   void specialGroupList(String activity) {
     specialList =
         hiveTenderList.where((tender) => tender.activity == activity).toList();
+  }
+
+  // switch value
+
+  bool switchValue = false;
+
+  changeSwitchValue(bool switchStatus) {
+    switchValue = switchStatus;
+    emit(SettigsState());
   }
 }

@@ -29,8 +29,8 @@ void main() async {
   await Hive.initFlutter();
   // register Tender object for Hive
   Hive.registerAdapter(TenderModelAdapter());
-  // wait open new box named "tenders" to store data
-  await Hive.openBox<TenderModel>(AppText.tenders);
+  // wait open new box named "tender_app_test" to store data
+  await Hive.openBox<TenderModel>(AppText.tender_app_test);
   
   // favorite box
   Hive.registerAdapter(FavTenderModelAdapter());
@@ -57,7 +57,7 @@ class TenderApp extends StatelessWidget {
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         theme: AppTheme.theme,
-        initialRoute: RouteGenerator.tenderAppMain,
+        initialRoute: RouteGenerator.splashView,
         onGenerateRoute: RouteGenerator.generateRoute,
         home: const TenderAppMain(),
         // themeMode: ThemeMode.light,

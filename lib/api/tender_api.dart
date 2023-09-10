@@ -6,7 +6,7 @@ import 'package:tender_app_test/models/tender_model.dart';
 class TenderApi {
   Future<TenderModel> getData({String searcheType = ""}) async {
     http.Response response = await http
-        .get(Uri.parse("https://egypt-tender.de.r.appspot.com/$searcheType"));
+        .get(Uri.parse("url/$searcheType"));
     String utf8Text = utf8.decode(response.bodyBytes);
 
     List data = jsonDecode(utf8Text);

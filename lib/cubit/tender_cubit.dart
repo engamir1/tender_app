@@ -63,10 +63,9 @@ class TenderCubit extends Cubit<TenderState> {
     await checkInternet();
     print("the line status is $isOnline");
     if (isOnline) {
-      // val = "https://egypt-tender.de.r.appspot.com/irrigation";
-      String url = "https://egypt-tender.de.r.appspot.com/$val";
-      // String url = "https://egypt-tender.de.r.appspot.com/all_tenders";
-
+     
+      String url = url/$val";
+ 
       // String url = "http://10.0.2.2:5000/$val";
 
       RequestTender request = RequestTender(url: url);
